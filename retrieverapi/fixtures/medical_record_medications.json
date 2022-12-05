@@ -1,0 +1,35 @@
+[
+    {
+        "model": "retrieverapi.medicalrecordmedications",
+        "pk": 1,
+        "fields": {
+            "medical_record": 1,
+            "medication": 12
+        }
+    },
+    {   "model": "retrieverapi.medicalrecordmedications",
+        "pk": 2,
+        "fields": {
+            "medical_record": 2,
+            "medication": 7
+        }
+    },
+    {
+        "model": "retrieverapi.medicalrecordmedications",
+        "pk": 3,
+        "fields": {
+            "medical_record": 2,
+            "medication": 7
+        }
+    },
+    {
+        "model": "retrieverapi.medicalrecordmedications",
+        "pk": 4,
+        "fields": {
+            "medical_record": 3,
+            "medication": 11
+        }
+    }
+  
+  
+]

@@ -1,0 +1,51 @@
+[
+    {
+        "model": "retrieverapi.medicalrecords",
+        "pk": 1,
+        "fields": {
+            "doctor": 1,
+            "patient": 1,
+            "presenting_complaint": "Excessive Scratching",
+            "subjective": "P has been scratching for the last month. Owner noted some hair loss and rashes on ventrum.",
+            "objective": "Temperature: 101.5 F, RR: 22 rpm, HR: 115 bpm. Erythematous skin on ventrum. Several crusting lesions noted around inguinal region.",
+            "assessment": "Suspect allergies",
+            "plan": "Send home allergy medication and oral antibiotic for 2 weeks. Recheck skin in 2 weeks.",
+            "date": "2022-11-02",
+            "diagnosis": 2,
+            "medications": []  
+        }
+    },
+    {
+        "model": "retrieverapi.medicalrecords",
+        "pk": 2,
+        "fields": {
+            "doctor": 1,
+            "patient": 1,
+            "presenting_complaint": "Diarrhea",
+            "subjective": "P has been having diarrhea for the last two weeks. No change in appetite or energy level. No pain on abdominal palpation.",
+            "objective": "Temperature: 100.8 F, RR: 22 rpm, HR: 110 bpm",
+            "assessment": "Stool sample positive for giardia oocysts",
+            "plan": "Send home metronidazole and fenbendazole. Recheck stool sample in 1 month",
+            "date": "2021-08-24",
+            "diagnosis": 4,
+            "medications": []  
+        }
+    },
+    {
+        "model": "retrieverapi.medicalrecords",
+        "pk": 3,
+        "fields": {
+            "doctor": 1,
+            "patient": 1,
+            "presenting_complaint": "Shaking head",
+            "subjective": "P has been scratching at ears for the last week. P will frequently shake head.",
+            "objective": "Temperature: 101.4, RR: 20 rpm, HR: 100 bpm. Erythematous AU. Dark brown ceruminous debri AU.",
+            "assessment": "Bilateral Ear Infections (+4 yeast AU)",
+            "plan": "Perform ear swab cytology (yeasted noted AU). Ear Cleaning AU. Send home ear cleaner and ear medication. Recheck ears in 2 weeks.",
+            "date": "2022-01-03",
+            "diagnosis": 1,
+            "medications": []  
+        }
+    }
+   
+]

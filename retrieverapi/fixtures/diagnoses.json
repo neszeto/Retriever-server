@@ -1,0 +1,45 @@
+[
+    {
+        "model": "retrieverapi.diagnoses",
+        "pk": 1,
+        "fields": {
+            "diagnosis": "Ear Infection"
+        }
+    },
+    {
+        "model": "retrieverapi.diagnoses",
+        "pk": 2,
+        "fields": {
+            "diagnosis": "Allergies"
+        }
+    },
+    {
+        "model": "retrieverapi.diagnoses",
+        "pk": 3,
+        "fields": {
+            "diagnosis": "Diabetes"
+        }
+    },
+    {
+        "model": "retrieverapi.diagnoses",
+        "pk": 4,
+        "fields": {
+            "diagnosis": "Giardiasis"
+        }
+    },
+    {
+        "model": "retrieverapi.diagnoses",
+        "pk": 5,
+        "fields": {
+            "diagnosis": "Abscess"
+        }
+    },
+    {
+        "model": "retrieverapi.diagnoses",
+        "pk": 6,
+        "fields": {
+            "diagnosis": "Vaccine Reaction"
+        }
+    }
+  
+]

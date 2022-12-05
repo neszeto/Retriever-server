@@ -1,0 +1,82 @@
+[
+    {
+        "model": "retrieverapi.owners",
+        "pk": 1,
+        "fields": {
+            "name": "Laura Davis",
+            "phone_number": "520-194-4829",
+            "email": "lauradavis@gmail.com",
+            "address": "390 Maple St, Nashville, TN 37206"  
+        }
+    },
+    {
+        "model": "retrieverapi.owners",
+        "pk": 2,
+        "fields": {
+            "name": "Robert Letter",
+            "phone_number": "625-493-2948",
+            "email": "robertletter@gmail.com",
+            "address": "92 Fawn Way, Nashville, TN 37206"  
+        }
+    },
+    {
+        "model": "retrieverapi.owners",
+        "pk": 3,
+        "fields": {
+            "name": "Maria Maytel",
+            "phone_number": "902-384-2840",
+            "email": "mariamaytel@gmail.com",
+            "address": "490 Hickory Blvd, Nashville, TN 37206"  
+        }
+    },
+    {
+        "model": "retrieverapi.owners",
+        "pk": 4,
+        "fields": {
+            "name": "Josh Hansen",
+            "phone_number": "849-294-2849",
+            "email": "joshhansen@gmail.com",
+            "address": "29 Grove Way, Nashville, TN 37206"  
+        }
+    },
+    {
+        "model": "retrieverapi.owners",
+        "pk": 5,
+        "fields": {
+            "name": "Lilly White",
+            "phone_number": "510-384-8392",
+            "email": "lilywhite@gmail.com",
+            "address": "992 Gosset St, Nashville, TN 37206"  
+        }
+    },
+    {
+        "model": "retrieverapi.owners",
+        "pk": 6,
+        "fields": {
+            "name": "Tommy Banner",
+            "phone_number": "482-492-4028",
+            "email": "tommybanner@gmail.com",
+            "address": "410 Shelby Way, Nashville, TN 37206"  
+        }
+    },
+    {
+        "model": "retrieverapi.owners",
+        "pk": 7,
+        "fields": {
+            "name": "Matt Barnett",
+            "phone_number": "392-402-4820",
+            "email": "mattbarnett@gmail.com",
+            "address": "429 Colbert Way, Nashville, TN 37206"  
+        }
+    },
+    {
+        "model": "retrieverapi.owners",
+        "pk": 8,
+        "fields": {
+            "name": "Kira Hart",
+            "phone_number": "839-509-3948",
+            "email": "kirahart@gmail.com",
+            "address": "22 Chester St, Nashville, TN 37206"  
+        }
+    }
+]

@@ -1,0 +1,86 @@
+[
+    {
+        "model": "retrieverapi.medications",
+        "pk": 1,
+        "fields": {
+            "name": "Carprofen"
+        }
+    },
+    {
+        "model": "retrieverapi.medications",
+        "pk": 2,
+        "fields": {
+            "name": "Cephalexin"
+        }
+    },
+    {
+        "model": "retrieverapi.medications",
+        "pk": 3,
+        "fields": {
+            "name": "Clavomox"
+        }
+    },
+    {
+        "model": "retrieverapi.medications",
+        "pk": 4,
+        "fields": {
+            "name": "Diphenhydramine"
+        }
+    },
+    {
+        "model": "retrieverapi.medications",
+        "pk": 5,
+        "fields": {
+            "name": "Maropitant"
+        }
+    },
+    {
+        "model": "retrieverapi.medications",
+        "pk": 6,
+        "fields": {
+            "name": "Meloxicam"
+        }
+    },
+    {
+        "model": "retrieverapi.medications",
+        "pk": 7,
+        "fields": {
+            "name": "Metronidazole"
+        }
+    },
+    {
+        "model": "retrieverapi.medications",
+        "pk": 8,
+        "fields": {
+            "name": "Fenbendazole"
+        }
+    },
+    {
+        "model": "retrieverapi.medications",
+        "pk": 9,
+        "fields": {
+            "name": "Mirtazapine"
+        }
+    },
+    {
+        "model": "retrieverapi.medications",
+        "pk": 10,
+        "fields": {
+            "name": "Morphine"
+        }
+    },
+    {
+        "model": "retrieverapi.medications",
+        "pk": 11,
+        "fields": {
+            "name": "Mometamax"
+        }
+    },
+    {
+        "model": "retrieverapi.medications",
+        "pk": 12,
+        "fields": {
+            "name": "Apoquel"
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "retrieverapi.species",
+        "pk": 1,
+        "fields": {
+            "species": "Feline"
+           
+        }
+    },
+    {
+        "model": "retrieverapi.species",
+        "pk": 2,
+        "fields": {
+            "species": "Canine"
+        }
+    }
+]

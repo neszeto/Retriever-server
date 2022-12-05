@@ -1,0 +1,152 @@
+[
+    {
+        "model": "retrieverapi.patients",
+        "pk": 1,
+        "fields": {
+            "name": "Scotty",
+            "species": 2,
+            "sex": "Male",
+            "breed": "Scottish Terrier",
+            "age": 2,
+            "color": "Black",
+            "weight": 18.8,
+            "deceased": false,
+            "owner": 8
+            
+            
+        }
+    },
+    {
+        "model": "retrieverapi.patients",
+        "pk": 2,
+        "fields": {
+            "name": "Ivy",
+            "species": 1,
+            "sex": "Female",
+            "breed": "Domestic Short Hair",
+            "age": 9,
+            "color": "Grey and White",
+            "weight": 10.1,
+            "deceased": false,
+            "owner": 7
+            
+        }
+    },
+    {
+        "model": "retrieverapi.patients",
+        "pk": 3,
+        "fields": {
+            "name": "Maple",
+            "species": 2,
+            "sex": "Female",
+            "breed": "Golden Retriever",
+            "age": 1,
+            "color": "Tan",
+            "weight": 65.2,
+            "deceased": false,
+            "owner": 6
+            
+            
+        }
+    },
+    {
+        "model": "retrieverapi.patients",
+        "pk": 4,
+        "fields": {
+            "name": "Mazy",
+            "species": 1,
+            "sex": "Female",
+            "breed": "Abyssinian",
+            "age": 15,
+            "color": "Reddish-brown",
+            "weight": 9.1,
+            "deceased": true,
+            "owner": 5
+            
+            
+        }
+    },
+    {
+        "model": "retrieverapi.patients",
+        "pk": 5,
+        "fields": {
+            "name": "Blue",
+            "species": 2,
+            "sex": "Male",
+            "breed": "Pitbull",
+            "age": 5,
+            "color": "Grey",
+            "weight": 69.9,
+            "deceased": false,
+            "owner": 4
+            
+            
+        }
+    },
+    {
+        "model": "retrieverapi.patients",
+        "pk": 6,
+        "fields": {
+            "name": "Norman",
+            "species": 2,
+            "sex": "Male",
+            "breed": "Dachshund",
+            "age": 2,
+            "color": "Black and Tan",
+            "weight": 15.2,
+            "deceased": false,
+            "owner": 3
+            
+            
+        }
+    },
+    {
+        "model": "retrieverapi.patients",
+        "pk": 7,
+        "fields": {
+            "name": "Tanner",
+            "species": 2,
+            "sex": "Male",
+            "breed": "Labrador Retriever",
+            "age": 10,
+            "color": "Tan",
+            "weight": 59.8,
+            "deceased": false,
+            "owner": 2
+            
+            
+        }
+    },
+    {
+        "model": "retrieverapi.patients",
+        "pk": 8,
+        "fields": {
+            "name": "Sasha",
+            "species": 2,
+            "sex": "Female",
+            "breed": "Chihuahua",
+            "age": 2,
+            "color": "Tan and White",
+            "weight": 10,
+            "deceased": false,
+            "owner": 1
+
+        }
+    },
+    {
+        "model": "retrieverapi.patients",
+        "pk": 9,
+        "fields": {
+            "name": "Mia",
+            "species": 2,
+            "sex": "Female",
+            "breed": "Chihuahua",
+            "age": 2,
+            "color": "Tan",
+            "weight": 9.6,
+            "deceased": false,
+            "owner": 1
+
+        }
+    }
+]
