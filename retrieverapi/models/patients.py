@@ -12,3 +12,4 @@ class Patients(models.Model):
     weight = models.IntegerField(default=0)
     deceased = models.BooleanField(default=False)
     owner = models.ForeignKey('Owners', on_delete=models.CASCADE, related_name='patients_of_owner')
+    image_url = models.CharField(max_length=250, null=True, blank=True)

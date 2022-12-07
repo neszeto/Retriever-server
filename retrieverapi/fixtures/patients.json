@@ -11,7 +11,8 @@
             "color": "Black",
             "weight": 18.8,
             "deceased": false,
-            "owner": 8
+            "owner": 8,
+            "image_url": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png"
             
             
         }
@@ -28,7 +29,8 @@
             "color": "Grey and White",
             "weight": 10.1,
             "deceased": false,
-            "owner": 7
+            "owner": 7,
+            "image_url": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png"
             
         }
     },
@@ -44,7 +46,8 @@
             "color": "Tan",
             "weight": 65.2,
             "deceased": false,
-            "owner": 6
+            "owner": 6,
+            "image_url": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png"
             
             
         }
@@ -61,7 +64,8 @@
             "color": "Reddish-brown",
             "weight": 9.1,
             "deceased": true,
-            "owner": 5
+            "owner": 5,
+            "image_url": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png"
             
             
         }
@@ -78,7 +82,8 @@
             "color": "Grey",
             "weight": 69.9,
             "deceased": false,
-            "owner": 4
+            "owner": 4,
+            "image_url": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png"
             
             
         }
@@ -95,7 +100,8 @@
             "color": "Black and Tan",
             "weight": 15.2,
             "deceased": false,
-            "owner": 3
+            "owner": 3,
+            "image_url": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png"
             
             
         }
@@ -112,7 +118,8 @@
             "color": "Tan",
             "weight": 59.8,
             "deceased": false,
-            "owner": 2
+            "owner": 2,
+            "image_url": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png"
             
             
         }
@@ -129,7 +136,8 @@
             "color": "Tan and White",
             "weight": 10,
             "deceased": false,
-            "owner": 1
+            "owner": 1,
+            "image_url": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png"
 
         }
     },
@@ -145,7 +153,8 @@
             "color": "Tan",
             "weight": 9.6,
             "deceased": false,
-            "owner": 1
+            "owner": 1,
+            "image_url": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png"
 
         }
     }
