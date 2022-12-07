@@ -10,6 +10,13 @@ class PatientView(ViewSet):
 
     def retrieve(self, request, pk):
         """Handle GET requests for single patient"""
+        try: 
+            game = Patients.objects.get(pk=pk)
+        except: 
+            return Response({'message': 'the game you requested does not exist'}, status=status.HTTP_404_NOT_FOUND)
+
+        serializer = PatientSerializer(game)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
     def list(self, request):
         """Handle GET requests for all patients"""

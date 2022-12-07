@@ -19,7 +19,7 @@
         "pk": 3,
         "fields": {
             "medical_record": 2,
-            "medication": 7
+            "medication": 8
         }
     },
     {
