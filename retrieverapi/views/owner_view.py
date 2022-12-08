@@ -33,7 +33,7 @@ class OwnerView(ViewSet):
 
 
 class OwnersSerializer(serializers.ModelSerializer):
-    """JSON serializer for patients"""
+    """JSON serializer for owners"""
 
     class Meta: 
         model = Owners

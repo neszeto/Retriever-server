@@ -22,7 +22,7 @@ class SpeciesView(ViewSet):
 
 
 class SpeciesSerializer(serializers.ModelSerializer):
-    """JSON serializer for patients"""
+    """JSON serializer for species"""
 
     class Meta: 
         model = Species

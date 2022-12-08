@@ -25,16 +25,24 @@ class MedicalRecordView(ViewSet):
             
             patient_id = request.query_params['patient']
             records = MedicalRecords.objects.filter(patient=patient_id).order_by('-date')
-            serializer = MedicalRecordsSerializer(records, many=True)
-            return Response(serializer.data, status=status.HTTP_200_OK)
+            
          
         else:
             try:
                 records = MedicalRecords.objects.all()
-                serializer = MedicalRecordsSerializer(records, many=True)
-                return Response(serializer.data, status=status.HTTP_200_OK)
+                
             except MedicalRecords.DoesNotExist as ex:
                 return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
+        
+        for record in records:
+            if request.auth.user == record.doctor.id:
+                record.my_record = True
+            else:
+                record.my_record = False
+
+        
+        serializer = MedicalRecordsSerializer(records, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
     def create(self, request):
         """Handle POST requests"""
@@ -57,7 +65,7 @@ class DoctorSerializer(serializers.ModelSerializer):
     """JSON serializer for doctors"""
     class Meta: 
         model= User
-        fields = ('first_name', 'last_name')
+        fields = ('id', 'first_name', 'last_name')
 
 class MedicationSerializer(serializers.ModelSerializer):
     """JSON serializer for medications"""
@@ -67,12 +75,12 @@ class MedicationSerializer(serializers.ModelSerializer):
         depth=1
 
 class MedicalRecordsSerializer(serializers.ModelSerializer):
-    """JSON serializer for patients"""
+    """JSON serializer for medical records"""
     doctor = DoctorSerializer(many=False)
     diagnosis = DiagnosisSerializer(many=False)
     medications_on_record = MedicationSerializer(many=True)
 
     class Meta: 
         model = MedicalRecords
-        fields = ('id', 'doctor', 'patient', 'presenting_complaint', 'subjective', 'objective', 'assessment', 'plan', 'date', 'diagnosis', 'medications_on_record')
+        fields = ('id', 'doctor', 'patient', 'presenting_complaint', 'subjective', 'objective', 'assessment', 'plan', 'date', 'diagnosis', 'medications_on_record', 'my_record')
         

@@ -13,3 +13,13 @@ class MedicalRecords(models.Model):
     date = models.DateField(auto_now=False, auto_now_add=False)
     diagnosis = models.ForeignKey('Diagnoses', on_delete=models.CASCADE, related_name='records_with_diagnosis')
     medications = models.ManyToManyField('Medications', through='MedicalRecordMedications')
+
+
+
+    @property
+    def my_record(self):
+        return self.__my_record
+
+    @my_record.setter
+    def my_record(self, value):
+        self.__my_record = value
