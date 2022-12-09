@@ -2,8 +2,10 @@ from django.http import HttpResponseServerError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
-from retrieverapi.models import MedicalRecords, Diagnoses, MedicalRecordMedications
+from retrieverapi.models import MedicalRecords, Diagnoses, MedicalRecordMedications, Patients
 from django.contrib.auth.models import User
+
+
 
 
 class MedicalRecordView(ViewSet):
@@ -46,15 +48,29 @@ class MedicalRecordView(ViewSet):
 
     def create(self, request):
         """Handle POST requests"""
+        if "patient" in request.query_params:
+            patient_id = request.query_params['patient']
+
+        patient=Patients.objects.get(pk=patient_id)
+        doctor=User.objects.get(pk=request.data["doctorId"])
+        diagnosis=Diagnoses.objects.get(pk=request.data["diagnosisId"])
+
         record = MedicalRecords.objects.create(
-            name=request.data["name"],
-            phone_number=request.data["phoneNumber"],
-            email=request.data["email"],
-            address=request.data["address"]
+            doctor=doctor,
+            patient=patient,
+            presenting_complaint=request.data['presentingComplaint'],
+            subjective=request.data['subjective'],
+            objective=request.data['objective'],
+            assessment=request.data['assessment'],
+            plan=request.data['plan'],
+            date=request.data['date'],
+            diagnosis=diagnosis
+            
 
         )
         serializer = MedicalRecordsSerializer(record)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
 class DiagnosisSerializer(serializers.ModelSerializer):
     """JSON serializer for diagnosis"""
     class Meta:

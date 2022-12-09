@@ -21,6 +21,21 @@ class MedicationView(ViewSet):
         except Medications.DoesNotExist as ex:
             return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
 
+    def create(self, request):
+        """Handle POST requests"""
+        currentMedications = Medications.objects.all()
+        
+        if any(request.data["name"].lower() == medication.name.lower() for medication in currentMedications):
+            return Response({"message": "This medication already exists"}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
+        if request.data['name'] == "":
+            return Response({"message": "No medication was entered"}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
+        else:
+            create_medication = Medications.objects.create(
+                name=request.data["name"]
+            )
+            serializer = MedicationSerializer(create_medication)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+
 
 class MedicationSerializer(serializers.ModelSerializer):
     """JSON serializer for medications"""

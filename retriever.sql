@@ -10,3 +10,12 @@ JOIN retrieverapi_medicalrecords mr
     ON mr.patient_id = p.id
 JOIN retrieverapi_diagnoses d 
     ON d.id = mr.diagnosis_id;
+
+
+UPDATE retrieverapi_medications
+SET name = "Clavamox"
+WHERE id = 3; 
+
+
+DELETE FROM retrieverapi_medications
+WHERE id = 46;
