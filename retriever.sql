@@ -17,5 +17,5 @@ SET name = "Clavamox"
 WHERE id = 3; 
 
 
-DELETE FROM retrieverapi_medications
-WHERE id = 46;
+DELETE FROM retrieverapi_patients
+WHERE id = 18;

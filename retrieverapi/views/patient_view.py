@@ -58,6 +58,24 @@ class PatientView(ViewSet):
 
         serializer = PatientSerializer(patient)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+    def update(self, request, pk):
+        """handles PUT request to patients"""
+        species = Species.objects.get(pk=request.data["speciesId"])
+
+        patient = Patients.objects.get(pk=pk)
+        patient.name = request.data["name"]
+        patient.breed = request.data["breed"]
+        patient.age = request.data["age"]
+        patient.color = request.data["color"]
+        patient.weight = request.data["weight"]
+        patient.sex = request.data["sex"]
+        patient.image_url = request.data["image_url"]
+        patient.deceased = request.data["deceased"]
+        patient.species = species
+        patient.save()
+
+        return Response(None, status=status.HTTP_204_NO_CONTENT)
         
 
 

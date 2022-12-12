@@ -37,7 +37,7 @@ class MedicalRecordView(ViewSet):
                 return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
         
         for record in records:
-            if request.auth.user == record.doctor.id:
+            if request.auth.user_id is record.doctor_id:
                 record.my_record = True
             else:
                 record.my_record = False
