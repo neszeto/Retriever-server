@@ -23,3 +23,6 @@ class MedicalRecords(models.Model):
     @my_record.setter
     def my_record(self, value):
         self.__my_record = value
+
+
+    

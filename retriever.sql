@@ -18,4 +18,4 @@ WHERE id = 3;
 
 
 DELETE FROM retrieverapi_patients
-WHERE id = 18;
+WHERE id > 18;

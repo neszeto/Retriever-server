@@ -2,8 +2,9 @@ from django.http import HttpResponseServerError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
-from retrieverapi.models import MedicalRecords, Diagnoses, MedicalRecordMedications, Patients
+from retrieverapi.models import MedicalRecords, Diagnoses, MedicalRecordMedications, Patients, Addendums
 from django.contrib.auth.models import User
+from django.db.models import Count
 
 
 
@@ -14,11 +15,11 @@ class MedicalRecordView(ViewSet):
     def retrieve(self, request, pk):
         """Handle GET requests for single medical record"""
         try: 
-            game = MedicalRecords.objects.get(pk=pk)
+            record = MedicalRecords.objects.get(pk=pk)
         except: 
             return Response({'message': 'the medical record you requested does not exist'}, status=status.HTTP_404_NOT_FOUND)
 
-        serializer = MedicalRecordsSerializer(game)
+        serializer = MedicalRecordsSerializer(record)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def list(self, request):
@@ -26,7 +27,8 @@ class MedicalRecordView(ViewSet):
         if "patient" in request.query_params:
             
             patient_id = request.query_params['patient']
-            records = MedicalRecords.objects.filter(patient=patient_id).order_by('-date')
+            records = MedicalRecords.objects.filter(patient=patient_id).order_by('-date').annotate(addendum_count=Count('record_addendums'))
+            
             
          
         else:
@@ -71,6 +73,18 @@ class MedicalRecordView(ViewSet):
         serializer = MedicalRecordsSerializer(record)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
+    def destroy(self, request, pk):
+        """handle DELETE requests"""
+        record = MedicalRecords.objects.get(pk=pk)
+        record.delete()
+        return Response(None, status=status.HTTP_204_NO_CONTENT)
+
+class AddendumSerializer(serializers.ModelSerializer):
+    """JSON serializer for diagnosis"""
+    class Meta:
+        model = Addendums
+        fields = ('id', 'medical_record', 'addendum', 'created_on')
+
 class DiagnosisSerializer(serializers.ModelSerializer):
     """JSON serializer for diagnosis"""
     class Meta:
@@ -95,8 +109,10 @@ class MedicalRecordsSerializer(serializers.ModelSerializer):
     doctor = DoctorSerializer(many=False)
     diagnosis = DiagnosisSerializer(many=False)
     medications_on_record = MedicationSerializer(many=True)
+    record_addendums = AddendumSerializer(many=True)
+    addendum_count = serializers.IntegerField(default=None)
 
     class Meta: 
         model = MedicalRecords
-        fields = ('id', 'doctor', 'patient', 'presenting_complaint', 'subjective', 'objective', 'assessment', 'plan', 'date', 'diagnosis', 'medications_on_record', 'my_record')
+        fields = ('id', 'doctor', 'patient', 'presenting_complaint', 'subjective', 'objective', 'assessment', 'plan', 'date', 'diagnosis', 'medications_on_record', 'my_record', 'record_addendums', 'addendum_count')
         
