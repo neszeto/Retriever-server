@@ -26,6 +26,7 @@ class PatientView(ViewSet):
             return Response(serializer.data)
         except Patients.DoesNotExist as ex:
             return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
+
     def create(self, request):
         """Handles POST operations"""
         owner = Owners.objects.get(pk=request.data["ownerId"])

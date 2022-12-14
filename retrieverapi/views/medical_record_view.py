@@ -115,4 +115,8 @@ class MedicalRecordsSerializer(serializers.ModelSerializer):
     class Meta: 
         model = MedicalRecords
         fields = ('id', 'doctor', 'patient', 'presenting_complaint', 'subjective', 'objective', 'assessment', 'plan', 'date', 'diagnosis', 'medications_on_record', 'my_record', 'record_addendums', 'addendum_count')
+
+
+
+
         
