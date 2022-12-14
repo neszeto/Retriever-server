@@ -17,5 +17,5 @@ SET name = "Clavamox"
 WHERE id = 3; 
 
 
-DELETE FROM retrieverapi_patients
-WHERE id > 18;
+DELETE FROM authtoken_token
+WHERE user_id = 6;

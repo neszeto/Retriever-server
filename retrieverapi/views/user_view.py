@@ -14,13 +14,18 @@ class UserView(ViewSet):
 
     def list(self, request):
         """Handle GET requests for all users"""
-        try:
-            doctors = User.objects.all()
-            serializer = UserSerializer(doctors, many=True)
-            return Response(serializer.data)
-        except User.DoesNotExist as ex:
-            return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
 
+        if "loggedin" in request.query_params:
+            doctors = User.objects.filter(pk=request.auth.user_id)
+        else:
+            try:
+                doctors = User.objects.all()
+            
+            except User.DoesNotExist as ex:
+                return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
+
+        serializer = UserSerializer(doctors, many=True)
+        return Response(serializer.data)
 
 class UserSerializer(serializers.ModelSerializer):
     """JSON serializer for users"""
