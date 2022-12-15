@@ -52,7 +52,8 @@ def register_user(request):
         password=request.data['password'],
         first_name=request.data['first_name'],
         last_name=request.data['last_name'],
-        email = request.data['email']
+        email = request.data['email'],
+        is_staff = request.data['is_staff']
     )
 
     # Now save the extra info in the levelupapi_gamer table
@@ -61,5 +62,7 @@ def register_user(request):
     # Use the REST Framework's token generator on the new user account
     token = Token.objects.create(user=new_user)
     # Return the token to the client
-    data = { 'token': token.key }
+    data = { 'valid': True,
+            'token': token.key,
+            'staff': new_user.is_staff }
     return Response(data)

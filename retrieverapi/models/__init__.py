@@ -6,3 +6,4 @@ from .owners import Owners
 from .patients import Patients
 from .species import Species
 from .addendum import Addendums
+from .doctors import Doctors
