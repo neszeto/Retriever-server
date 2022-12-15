@@ -89,7 +89,7 @@ class DiagnosisSerializer(serializers.ModelSerializer):
     """JSON serializer for diagnosis"""
     class Meta:
         model = Diagnoses
-        fields = ('diagnosis', )
+        fields = ('id', 'diagnosis', )
 
 class DoctorSerializer(serializers.ModelSerializer):
     """JSON serializer for doctors"""
