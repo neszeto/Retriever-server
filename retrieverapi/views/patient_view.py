@@ -2,7 +2,7 @@ from django.http import HttpResponseServerError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
-from retrieverapi.models import Patients, Owners, Species
+from retrieverapi.models import Patients, Owners, Species, MedicalRecords
 
 
 class PatientView(ViewSet):
@@ -78,12 +78,18 @@ class PatientView(ViewSet):
 
         return Response(None, status=status.HTTP_204_NO_CONTENT)
         
+class RecordSerializer(serializers.ModelSerializer):
 
+    class Meta:
+        model = MedicalRecords
+        fields = ('diagnosis', 'medications')
+        depth=1
 
 class PatientSerializer(serializers.ModelSerializer):
     """JSON serializer for patients"""
-
+    records_for_patient = RecordSerializer(many=True)
+    
     class Meta: 
         model = Patients
-        fields = ('id', 'name', 'species', 'sex', 'breed', 'age', 'color', 'weight', 'deceased', 'owner', 'image_url')
+        fields = ('id', 'name', 'species', 'sex', 'breed', 'age', 'color', 'weight', 'deceased', 'owner', 'image_url', 'records_for_patient')
         depth=1
