@@ -4,11 +4,11 @@ from rest_framework.response import Response
 from rest_framework import serializers, status
 
 from django.contrib.auth.models import User
-from retrieverapi.models import Doctors
+
 
 
 class UserView(ViewSet):
-    """Retriever patient view"""
+    """Retriever user view"""
 
     def retrieve(self, request, pk):
         """Handle GET requests for single user"""
@@ -26,7 +26,7 @@ class UserView(ViewSet):
                 return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
 
         serializer = UserSerializer(doctors, many=True)
-        return Response(serializer.data)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
 
 class UserSerializer(serializers.ModelSerializer):

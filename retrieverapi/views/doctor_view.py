@@ -25,11 +25,15 @@ class DoctorView(ViewSet):
         if doctor.active is False:
             doctor.active = True
             doctor.save()
-        else:
+        
+        elif doctor.active is True: 
+
             doctor.image_url=request.data['imageUrl']
             doctor.bio=request.data['bio']
-            doctor.active=['active']
+            doctor.active=request.data['active']
             doctor.save()
+        
+
 
         return Response(None, status=status.HTTP_204_NO_CONTENT)
         
