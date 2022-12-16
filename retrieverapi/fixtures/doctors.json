@@ -1,0 +1,50 @@
+[
+    {
+        "model": "retrieverapi.doctors",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "image_url": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png",
+            "bio": "Daniel Lee Bio ",
+            "active": true
+            
+            
+        }
+    },
+    {
+        "model": "retrieverapi.doctors",
+        "pk": 2,
+        "fields": {
+            "user": 4,
+            "image_url": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png",
+            "bio": "Sally Jones Bio ",
+            "active": true
+            
+            
+        }
+    },
+    {
+        "model": "retrieverapi.doctors",
+        "pk": 3,
+        "fields": {
+            "user": 5,
+            "image_url": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png",
+            "bio": "Robert Stevens Bio ",
+            "active": true
+            
+            
+        }
+    },
+    {
+        "model": "retrieverapi.doctors",
+        "pk": 4,
+        "fields": {
+            "user": 8,
+            "image_url": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png",
+            "bio": "Rebecca Smith Bio ",
+            "active": false
+            
+            
+        }
+    }
+]

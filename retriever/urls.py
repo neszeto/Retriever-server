@@ -18,7 +18,7 @@ from django.conf.urls import include
 from django.urls import path
 from retrieverapi.views import register_user, login_user
 from rest_framework import routers
-from retrieverapi.views import PatientView, SpeciesView, OwnerView, MedicalRecordView, UserView, MedicationView, MedicalRecordMedicationView, DiagnosisView, AddendumView
+from retrieverapi.views import PatientView, SpeciesView, OwnerView, MedicalRecordView, UserView, MedicationView, MedicalRecordMedicationView, DiagnosisView, AddendumView, DoctorView
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'patients', PatientView, 'patient')
@@ -30,6 +30,7 @@ router.register(r'medications', MedicationView , 'medication')
 router.register(r'medicalrecordmedications', MedicalRecordMedicationView , 'medicalrecordmedication')
 router.register(r'diagnoses', DiagnosisView , 'diagnosis')
 router.register(r'addendums', AddendumView , 'addendum')
+router.register(r'doctors', DoctorView , 'doctor')
 
 
 urlpatterns = [

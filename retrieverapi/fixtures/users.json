@@ -10,5 +10,54 @@
             "email": "daniellee@gmail.com"
             
         }
+    },
+    {
+        "model": "auth.user",
+        "pk": 4,
+        "fields": {
+            "password": "pbkdf2_sha256$390000$DgbwYRdnC9J7LCbqu15mua$LfYf2Fo//vb1FiyIXdOrr0Iq5VlF4QaBDA4v34x83es=",
+            "username": "sjones",
+            "first_name": "Sally",
+            "last_name": "Jones",
+            "email": "sallyjones@gmail.com"
+            
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 5,
+        "fields": {
+            "password": "pbkdf2_sha256$390000$aKhpgajJak6BxixOhU2gS3$cUSJ1vaofXjVixGGO7ZgM3gup5dxX4MFSuoIZ+x+B9A=",
+            "username": "rstevens",
+            "first_name": "Robert",
+            "last_name": "Stevens",
+            "email": "robertstevens@gmail.com"
+            
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 7,
+        "fields": {
+            "password": "pbkdf2_sha256$390000$iUD9MnWVzv1sVZgRYRVqMG$qs285C1a48DbPZ+6F780BmOvW+QcXXmBwEfIeG+BLF4=",
+            "username": "nlorrel",
+            "first_name": "Nancy",
+            "last_name": "Lorrel",
+            "email": "nancylorrel@gmail.com",
+            "is_staff": true
+            
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 8,
+        "fields": {
+            "password": "pbkdf2_sha256$390000$QXwnR2gZBtb7tS2Bekwylb$5/DWEQ6Mut4Cv8skjZwPcPY5D7oetC29l3UsqsrbLn0=",
+            "username": "rsmith",
+            "first_name": "Rebecca",
+            "last_name": "Smith",
+            "email": "rebeccasmith@gmail.com"
+            
+        }
     }
 ]

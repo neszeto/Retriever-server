@@ -8,3 +8,4 @@ from .medication_view import MedicationView
 from .medical_record_medication_view import MedicalRecordMedicationView
 from .diagnosis_view import DiagnosisView
 from .addendum_view import AddendumView
+from .doctor_view import DoctorView

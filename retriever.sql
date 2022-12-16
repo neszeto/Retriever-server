@@ -18,4 +18,4 @@ WHERE id = 3;
 
 
 DELETE FROM authtoken_token
-WHERE user_id = 6;
+WHERE user_id = 9;

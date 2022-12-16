@@ -3,7 +3,7 @@
         "model": "retrieverapi.medicalrecords",
         "pk": 1,
         "fields": {
-            "doctor": 1,
+            "doctor": 4,
             "patient": 1,
             "presenting_complaint": "Excessive Scratching",
             "subjective": "P has been scratching for the last month. Owner noted some hair loss and rashes on ventrum.",
@@ -19,7 +19,7 @@
         "model": "retrieverapi.medicalrecords",
         "pk": 2,
         "fields": {
-            "doctor": 1,
+            "doctor": 4,
             "patient": 1,
             "presenting_complaint": "Diarrhea",
             "subjective": "P has been having diarrhea for the last two weeks. No change in appetite or energy level. No pain on abdominal palpation.",
@@ -35,7 +35,7 @@
         "model": "retrieverapi.medicalrecords",
         "pk": 3,
         "fields": {
-            "doctor": 1,
+            "doctor": 4,
             "patient": 1,
             "presenting_complaint": "Shaking head",
             "subjective": "P has been scratching at ears for the last week. P will frequently shake head.",

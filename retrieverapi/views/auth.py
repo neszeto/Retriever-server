@@ -4,6 +4,7 @@ from rest_framework.authtoken.models import Token
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
+from retrieverapi.models import Doctors
 
 
 
@@ -47,6 +48,7 @@ def register_user(request):
 
     # Create a new user by invoking the `create_user` helper method
     # on Django's built-in User model
+    
     new_user = User.objects.create_user(
         username=request.data['username'],
         password=request.data['password'],
@@ -57,7 +59,12 @@ def register_user(request):
     )
 
     # Now save the extra info in the levelupapi_gamer table
-    
+    if request.data['is_staff'] is False: 
+        doctor = Doctors.objects.create(
+            user=new_user,
+            image_url="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png",
+            bio="no bio to display"
+            )
 
     # Use the REST Framework's token generator on the new user account
     token = Token.objects.create(user=new_user)
@@ -65,4 +72,5 @@ def register_user(request):
     data = { 'valid': True,
             'token': token.key,
             'staff': new_user.is_staff }
+
     return Response(data)

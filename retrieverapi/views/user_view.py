@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from rest_framework import serializers, status
 
 from django.contrib.auth.models import User
+from retrieverapi.models import Doctors
 
 
 class UserView(ViewSet):
@@ -27,9 +28,12 @@ class UserView(ViewSet):
         serializer = UserSerializer(doctors, many=True)
         return Response(serializer.data)
 
+
 class UserSerializer(serializers.ModelSerializer):
     """JSON serializer for users"""
+    
 
     class Meta: 
         model = User
-        fields = ('id', 'first_name', 'last_name', 'is_staff')
+        fields = ('id', 'first_name', 'last_name', 'is_staff', 'users_that_are_doctors')
+        depth =1
