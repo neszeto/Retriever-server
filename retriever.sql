@@ -17,5 +17,5 @@ SET name = "Clavamox"
 WHERE id = 3; 
 
 
-DELETE FROM authtoken_token
-WHERE user_id = 9;
+DELETE FROM auth_user
+WHERE id = (10, 11);
