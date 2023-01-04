@@ -17,5 +17,8 @@ SET name = "Clavamox"
 WHERE id = 3; 
 
 
-DELETE FROM auth_user
-WHERE id = (10, 11);
+DELETE FROM retrieverapi_medicalrecords
+WHERE id = 4;
+
+INSERT INTO retrieverapi_medicalrecordmedications
+VALUES (56, 1, 12);
