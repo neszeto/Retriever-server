@@ -13,19 +13,37 @@ class PatientView(ViewSet):
         try: 
             game = Patients.objects.get(pk=pk)
         except: 
-            return Response({'message': 'the game you requested does not exist'}, status=status.HTTP_404_NOT_FOUND)
+            return Response({'message': 'the patient you requested does not exist'}, status=status.HTTP_404_NOT_FOUND)
 
         serializer = PatientSerializer(game)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def list(self, request):
         """Handle GET requests for all patients"""
-        try:
-            patients = Patients.objects.order_by('name')
-            serializer = PatientSerializer(patients, many=True)
-            return Response(serializer.data)
-        except Patients.DoesNotExist as ex:
-            return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
+        if "total" in request.query_params:
+            active_patients = Patients.objects.filter(deceased=False)
+            total_patients = active_patients.count()
+            return Response(total_patients, status=status.HTTP_200_OK)
+
+        if "canine" in request.query_params: 
+            active_patients = Patients.objects.filter(deceased=False)
+            active_canines = active_patients.filter(species=2)
+            total_canines = active_canines.count()
+            return Response(total_canines, status=status.HTTP_200_OK)
+        
+        if "feline" in request.query_params: 
+            active_patients = Patients.objects.filter(deceased=False)
+            active_felines = active_patients.filter(species=1)
+            total_felines = active_felines.count()
+            return Response(total_felines, status=status.HTTP_200_OK)
+        
+        else:
+            try:
+                patients = Patients.objects.order_by('name')
+                serializer = PatientSerializer(patients, many=True)
+                return Response(serializer.data, status=status.HTTP_200_OK)
+            except Patients.DoesNotExist as ex:
+                return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
 
     def create(self, request):
         """Handles POST operations"""

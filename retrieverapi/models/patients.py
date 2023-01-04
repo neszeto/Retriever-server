@@ -17,4 +17,10 @@ class Patients(models.Model):
    
         
 
-        
+@property
+def total(self):
+        return self.__total
+
+@total.setter
+def total(self, value):
+    self.__total = value
