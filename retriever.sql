@@ -12,13 +12,13 @@ JOIN retrieverapi_diagnoses d
     ON d.id = mr.diagnosis_id;
 
 
-UPDATE retrieverapi_medications
-SET name = "Clavamox"
-WHERE id = 3; 
+UPDATE retrieverapi_medicalrecords
+SET plan = "FNA of submandibular lymph nodes - large lymphoblasts noted. Recommend referral to Oncology vs palliative care."
+WHERE id = 40; 
 
 
 DELETE FROM retrieverapi_medicalrecords
-WHERE id = 4;
+WHERE id = 26;
 
-INSERT INTO retrieverapi_medicalrecordmedications
+INSERT INTO retrieverapi_owners
 VALUES (56, 1, 12);
