@@ -9,6 +9,7 @@ autopep8 = "*"
 pylint = "*"
 djangorestframework = "*"
 django-cors-headers = "*"
+drf-yasg = "*"
 
 [dev-packages]
 

@@ -13,8 +13,8 @@ JOIN retrieverapi_diagnoses d
 
 
 UPDATE retrieverapi_medicalrecords
-SET plan = "FNA of submandibular lymph nodes - large lymphoblasts noted. Recommend referral to Oncology vs palliative care."
-WHERE id = 40; 
+SET assessment = "Ear cytology shows +1 cocci AS and +3 cocci AD."
+WHERE id = 58; 
 
 
 DELETE FROM retrieverapi_medicalrecords
