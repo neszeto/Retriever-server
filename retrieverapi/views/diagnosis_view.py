@@ -27,7 +27,7 @@ class DiagnosisView(ViewSet):
         if any(request.data["diagnosis"].lower() == diagnosis.diagnosis.lower() for diagnosis in all_diagnoses): #if the diagnosis exists in the database
             foundDiagnosis = next(diagnosis for diagnosis in all_diagnoses if diagnosis.diagnosis.lower() == request.data["diagnosis"].lower()) #find that diagnosis object and return it
             serializer = DiagnosesSerializer(foundDiagnosis)
-            return Response(serializer.data, status=status.HTTP_405_METHOD_NOT_ALLOWED)
+            return Response(serializer.data, status=status.HTTP_200_OK)
         
         else: #if the diagnosis does not exist in the database, create it and return it
             diagnosis = Diagnoses.objects.create(

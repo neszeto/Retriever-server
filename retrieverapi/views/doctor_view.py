@@ -12,7 +12,7 @@ class DoctorView(ViewSet):
         try: 
             doctor = Doctors.objects.get(pk=pk)
         except: 
-            return Response({'message': 'the game you requested does not exist'}, status=status.HTTP_404_NOT_FOUND)
+            return Response({'message': 'the doctor you requested does not exist'}, status=status.HTTP_404_NOT_FOUND)
 
         serializer = DoctorSerializer(doctor)
         return Response(serializer.data, status=status.HTTP_200_OK)

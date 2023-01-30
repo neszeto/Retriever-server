@@ -17,8 +17,8 @@ SET assessment = "Ear cytology shows +1 cocci AS and +3 cocci AD."
 WHERE id = 58; 
 
 
-DELETE FROM retrieverapi_medicalrecords
-WHERE id = 26;
+DELETE FROM retrieverapi_diagnoses
+WHERE id = 14;
 
 INSERT INTO retrieverapi_owners
 VALUES (56, 1, 12);
